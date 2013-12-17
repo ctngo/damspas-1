@@ -72,6 +72,7 @@ Hydra::Application.configure do
   config.lang_vocab ="#{config.id_namespace}bb43434343"
   config.excluded_collections = "(bd5905379f OR bb13664503)"
   config.developer_groups = ['public']
+  config.unknown_groups = ['unknown']
   config.zoomify_baseurl = 'http://rohan.ucsd.edu/zoomify/'
   config.shibboleth = true
 end
