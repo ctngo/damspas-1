@@ -25,7 +25,7 @@ Hydra::Application.configure do
   config.action_dispatch.x_sendfile_header = "X-Sendfile" # for apache
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
-  config.assets.precompile += ['home-page.js','home-page.css','leaflet.js','leaflet.css']
+  config.assets.precompile += ['home-page.js','home-page.css']
 
   # Don't care if the mailer can't send
   config.action_mailer.raise_delivery_errors = false
