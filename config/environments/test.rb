@@ -31,6 +31,9 @@ Hydra::Application.configure do
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
 
+  # i18n
+  config.i18n.fallbacks = true
+
   # environment-specific DAMS config
   # ip-based role assignment
   config.public_ips = []
