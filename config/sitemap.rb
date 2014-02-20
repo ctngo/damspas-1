@@ -1,21 +1,55 @@
-Sitemap::Generator.instance.load( :host => "library.ucsd.edu/dc" ) do
+# Set the host name for URL creation
+SitemapGenerator::Sitemap.default_host = "http://library.ucsd.edu/dc"
+SitemapGenerator::Sitemap.compress = :all_but_first
 
-  path :root, priority: 1, change_frequency: 'monthly'
-  path :about, change_frequency: 'monthly'
-  path :faq, change_frequency: 'monthly'
-  path :takedown, change_frequency: 'monthly'
+SitemapGenerator::Sitemap.create do
 
-  read_group = Solrizer.solr_name('read_access_group', :symbol)
-  DamsObject.where(read_group => 'public').all.each do |obj|
-    path :dams_object, params: { id: obj.pid }, priority: 0.9, change_frequency: 'monthly', updated_at: obj.modified_date
+  # static pages
+  add '/about'
+  add '/faq'
+  add '/takedown'
+
+  # resources from solr
+  resources = {
+    :DamsObject => :object,
+    :DamsAssembledCollection => :dams_collections,
+    :DamsProvenanceCollection => :dams_collections,
+    :DamsProvenanceCollectionPart => :dams_collections
+  }
+  resources.each do |record_type,record_path|
+    rows = 100
+    done = 0
+    total = 0
+    more_records = true
+    solr = RSolr.connect( :url => ActiveFedora.solr_config[:url] )
+    while ( more_records )
+      # get a batch of records from solr
+      solr_response = solr.get 'select', :params => {:q => "has_model_ssim:\"info:fedora/afmodel:#{record_type}\" AND read_access_group_ssim:public", :rows => rows, :wt => :ruby, :start => done}
+      response = solr_response['response']
+      if done == 0
+        if SitemapGenerator::Sitemap.verbose
+          puts "#{record_type}: #{response['numFound']} records"
+        end
+        total = response["numFound"]
+      end
+      done += rows
+  
+      # output each record
+      @records = response['docs']
+      @records.each do |rec|
+        id = rec['id']
+        lastmod = rec['timestamp']
+        if SitemapGenerator::Sitemap.verbose
+          puts "#{record_type}: #{id}, lastmod: #{lastmod}"
+        end
+        add "#{record_path}/#{id}", priority: 0.9, :changefreq => 'monthly', :lastmod => lastmod
+      end
+  
+      # stop looping if this is the last batch
+      if done >= total
+        more_records = false
+      end
+    end
   end
-  DamsAssembledCollection.where(read_group => 'public').all.each do |col|
-    path :dams_collection, params: { id: col.pid }, priority: 0.9, change_frequency: 'monthly', updated_at: col.modified_date
-  end
-  DamsProvenanceCollection.where(read_group => 'public').all.each do |col|
-    path :dams_collection, params: { id: col.pid }, priority: 0.9, change_frequency: 'monthly', updated_at: col.modified_date
-  end
-  DamsProvenanceCollectionPart.where(read_group => 'public').all.each do |col|
-    path :dams_collection, params: { id: col.pid }, priority: 0.9, change_frequency: 'monthly', updated_at: col.modified_date
-  end
+
 end
