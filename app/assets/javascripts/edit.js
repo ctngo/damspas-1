@@ -13,7 +13,7 @@ function getDynamicFields(link,type,location,fieldId,typeName,selectedValue,rela
   var fieldName = null;
   var typeGet = null;
   var reg = null;
-  
+  baseURL = "http://localhost:3000/get_data"
   if (typeof link == "string") {
     q = link;
     fieldName = typeName+"URI";

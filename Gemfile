@@ -48,7 +48,9 @@ gem 'uglifier' #, '2.0.1'
 group :development, :test do
   gem 'sass-rails' #,   '3.2.6'
   gem 'coffee-rails' #, '3.2.2'
-
+  
+  gem 'jasmine-jquery-rails'
+  gem 'jasmine'
   gem 'capybara' #, '2.1.0'
   gem 'database_cleaner' #, '0.9.1'
   gem 'jettywrapper' #, '1.4.1'
