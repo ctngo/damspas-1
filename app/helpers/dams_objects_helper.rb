@@ -609,7 +609,7 @@ module DamsObjectsHelper
 		if (@isParent[index])
 
 			concat "<ul class='unstyled node-container'>".html_safe
-			@document["component_#{index}_children_isim"].each do |sub|
+			@document["component_#{index}_children_isim"].reverse.each do |sub|
 				displayNode sub
 				@seen.push(sub)
 			end
