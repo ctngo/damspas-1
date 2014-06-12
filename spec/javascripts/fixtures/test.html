@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)http://localhost:3000/object/new -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+<meta content="7MiYjX2ZghMOWvtKRWlar--c6mD2ose5EcbQFQ6szFA" name="google-site-verification">
+<meta content="University of California, San Diego" name="ORGANIZATION">
+<meta content="index,follow,noarchive" name="robots">
+<meta content="DC" name="SITE">
+<meta content="UC San Diego Library Digital Collections" name="PAGETITLE">
+<title>UC San Diego Library Digital Collections</title>
+
+
+
+<!-- IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<!-- Activate ClearType technology on Mobile IE -->
+<!--[if IEMobile]>
+	<meta http-equiv="cleartype" content="on">
+<![endif]-->
+
+
+
+		<link href="http://localhost:3000/search/opensearch.xml" title="UC San Diego Library Digital Collections" type="application/opensearchdescription+xml" rel="search">
+		
+	</head>
+
+	
+	<body onload="$(&#39;input#q&#39;).focus();" class="blacklight-dams_objects blacklight-dams_objects-new" style="">
+
+		<header>
+  <section class="container-fluid ucsd-head visible-desktop">
+    <a class="pull-right ucsd-head-logo" href="http://www.ucsd.edu/"><img alt="UC San Diego" src="./test_files/logo-ucsd-header-xl.png"></a>
+    <a class="brand" href="http://localhost:3000/">Digital Collections</a>
+  </section>
+  <section class="navbar navbar-inverse">
+    <div class="navbar-inner">
+
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+
+      <a class="brand hidden-desktop" href="http://localhost:3000/">Digital Collections</a>
+
+      <nav class="nav-collapse collapse">
+
+        <ul class="nav">
+          <li><a href="http://localhost:3000/">Home</a></li>
+          <li><a href="http://localhost:3000/about">About</a></li>
+          <!-- Link to general browse by collection, format and topic page -->
+          <li class="dropdown">
+            <a href="http://localhost:3000/object/new#" class="dropdown-toggle" data-toggle="dropdown">Browse By <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="http://localhost:3000/collections">Collection</a></li>
+              <li><a href="http://localhost:3000/search/facet/object_type_sim?facet.sort=index">Format</a></li>
+              <li><a href="http://localhost:3000/search/facet/subject_topic_sim?facet.sort=index">Topic</a></li>
+            </ul>
+          </li>
+
+         <li class="dropdown">
+            <a href="http://localhost:3000/object/new#" class="dropdown-toggle" data-toggle="dropdown">Help <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="mailto:dlp@ucsd.edu">Contact</a></li>
+              <li><a href="http://localhost:3000/faq">FAQ</a></li>
+              <li><a href="http://localhost:3000/search_tips">Search Tips</a>
+              </li><li><a href="http://localhost:3000/takedown">Take Down Policy</a></li>
+            </ul>
+          </li>
+
+            <li class="dropdown">
+              <!-- Logged in as  -->
+              <a href="http://localhost:3000/object/new#" class="dropdown-toggle" data-toggle="dropdown">Editor Tools <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                	<li><a href="./test_files/test.html">Create Object</a></li>
+	              <li><a href="http://localhost:3000/dams_provenance_collections/new">Create Provenance Collection</a></li>
+	              <li><a href="http://localhost:3000/dams_provenance_collection_parts/new">Create Provenance Collection Part</a></li>
+	              <li><a href="http://localhost:3000/dams_assembled_collections/new">Create Assembled Collection</a></li>
+                <li class="divider"></li>
+                <li><a href="http://localhost:3000/users/sign_out">Sign Out</a></li>
+                <!-- use an image bug to keep the Shibboleth session alive -->
+                <img src="./test_files/imagebug">
+              </ul>
+            </li>
+          <li>
+            <a href="http://libraries.ucsd.edu/">The Library</a>
+          </li>
+ 
+        </ul>
+      </nav>
+    </div>
+  </section>
+
+    
+<section class="container-fluid mobile-search-bar-alt clearfix">
+  <form accept-charset="UTF-8" action="http://localhost:3000/search" class="form-search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"></div>
+    <div class="input-append">
+      <label class="hide-text" for="q">Search Digital Collections</label>
+      <input type="text" placeholder="Search Digital Collections" name="q" id="q" class="search-query">
+      <button class="btn btn-inverse" type="submit" id="mobile-search-button">
+        <i class="icon-search icon-white"></i>
+      </button>
+    </div>
+</form></section>
+
+
+</header>
+
+
+		<section id="messages" class="container-fluid">
+			<div class="flash_messages">
+</div>
+
+		</section>
+
+		<section id="main-container" class="container-fluid">
+			<script>
+//<![CDATA[
+var baseURL = 'http://localhost:3000/get_data';
+//]]>
+</script>
+<h1>Create a new Dams Object</h1>
+<div class="dams-viewer">
+<form accept-charset="UTF-8" action="http://localhost:3000/object" class="new_dams_object" enctype="multipart/form-data" id="fileupload" method="post" onsubmit="processForm_generic(&quot;#dams_object_&quot;);"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="si1BvqTPb0sEsvlh9+JLCf+/lsfJblhFFG+H/PxI9Lk="></div>
+
+   <h3>Title</h3> 
+  
+    
+      <label for="dams_object_title_attributes_0_mainTitleElement_attributes_0_elementValue">MainTitle</label>
+      <input class="input-block-level" id="dams_object_title_attributes_0_mainTitleElement_attributes_0_elementValue" name="dams_object[title_attributes][0][mainTitleElement_attributes][0][elementValue]" required="required" type="text" value="">
+    
+      <label for="dams_object_title_attributes_0_subTitleElement_attributes_0_elementValue">SubTitle</label>
+      <input class="input-block-level" id="dams_object_title_attributes_0_subTitleElement_attributes_0_elementValue" name="dams_object[title_attributes][0][subTitleElement_attributes][0][elementValue]" type="text" value="">
+    
+      <label for="dams_object_title_attributes_0_partNameElement_attributes_0_elementValue">PartName</label>
+      <input class="input-block-level" id="dams_object_title_attributes_0_partNameElement_attributes_0_elementValue" name="dams_object[title_attributes][0][partNameElement_attributes][0][elementValue]" type="text" value="">
+    
+      <label for="dams_object_title_attributes_0_partNumberElement_attributes_0_elementValue">PartNumber</label>
+      <input class="input-block-level" id="dams_object_title_attributes_0_partNumberElement_attributes_0_elementValue" name="dams_object[title_attributes][0][partNumberElement_attributes][0][elementValue]" type="text" value="">
+    
+      <label for="dams_object_title_attributes_0_nonSortElement_attributes_0_elementValue">NonSort</label>
+      <input class="input-block-level" id="dams_object_title_attributes_0_nonSortElement_attributes_0_elementValue" name="dams_object[title_attributes][0][nonSortElement_attributes][0][elementValue]" type="text" value="">
+    
+      <label for="dams_object_title_attributes_0_hasVariant_attributes_0_variantLabel">Variant</label>
+      <input class="input-block-level" id="dams_object_title_attributes_0_hasVariant_attributes_0_variantLabel" name="dams_object[title_attributes][0][hasVariant_attributes][0][variantLabel]" type="text" value="">
+    
+      <label for="dams_object_title_attributes_0_hasTranslationVariant_attributes_0_variantLabel">Translation Variant</label>
+      <input class="input-block-level" id="dams_object_title_attributes_0_hasTranslationVariant_attributes_0_variantLabel" name="dams_object[title_attributes][0][hasTranslationVariant_attributes][0][variantLabel]" type="text" value="">
+    
+      <label for="dams_object_title_attributes_0_hasAbbreviationVariant_attributes_0_variantLabel">Abbreviation Variant</label>
+      <input class="input-block-level" id="dams_object_title_attributes_0_hasAbbreviationVariant_attributes_0_variantLabel" name="dams_object[title_attributes][0][hasAbbreviationVariant_attributes][0][variantLabel]" type="text" value="">
+    
+      <label for="dams_object_title_attributes_0_hasAcronymVariant_attributes_0_variantLabel">Acronym Variant</label>
+      <input class="input-block-level" id="dams_object_title_attributes_0_hasAcronymVariant_attributes_0_variantLabel" name="dams_object[title_attributes][0][hasAcronymVariant_attributes][0][variantLabel]" type="text" value="">
+    
+      <label for="dams_object_title_attributes_0_hasExpansionVariant_attributes_0_variantLabel">Expansion Variant</label>
+      <input class="input-block-level" id="dams_object_title_attributes_0_hasExpansionVariant_attributes_0_variantLabel" name="dams_object[title_attributes][0][hasExpansionVariant_attributes][0][variantLabel]" type="text" value="">
+  
+
+  <h3>Type Of Resource</h3>
+<select id="dams_object_typeOfResource_" name="dams_object[typeOfResource][]" required="required"><option value="">Select Type of resource</option><option value="text">text</option>
+<option value="cartographic">cartographic</option>
+<option value="notated music">notated music</option>
+<option value="sound recording-musical">sound recording-musical</option>
+<option value="sound recording-nonmusical">sound recording-nonmusical</option>
+<option value="sound recording">sound recording</option>
+<option value="still image">still image</option>
+<option value="moving image">moving image</option>
+<option value="three dimensional object">three dimensional object</option>
+<option value="software">software</option>
+<option value="multimedia">multimedia</option>
+<option value="mixed material">mixed material</option></select>
+
+
+  <h3>Date</h3>
+<div id="dateSection">
+  
+    <div class="fields">
+    <label for="dams_object_date_attributes_0_value">Date</label>
+    <input class="input-block-level" id="dams_object_date_attributes_0_value" name="dams_object[date_attributes][0][value]" type="text" value="">    
+    <label for="dams_object_date_attributes_0_beginDate">Begin Date</label>
+    <input class="input-block-level" id="dams_object_date_attributes_0_beginDate" name="dams_object[date_attributes][0][beginDate]" type="text" value=""> 
+    <label for="dams_object_date_attributes_0_endDate">End Date</label>
+    <input class="input-block-level" id="dams_object_date_attributes_0_endDate" name="dams_object[date_attributes][0][endDate]" type="text" value="">
+    <label for="dams_object_date_attributes_0_type">Date Type</label>
+    <input class="input-block-level" id="dams_object_date_attributes_0_type" name="dams_object[date_attributes][0][type]" type="text" value="">    
+    <label for="dams_object_date_attributes_0_encoding">Date Encoding</label>
+    <input class="input-block-level" id="dams_object_date_attributes_0_encoding" name="dams_object[date_attributes][0][encoding]" type="text" value="">
+    <br>
+    	<a class="real" href="http://localhost:3000/object/new#" onclick="remove_fields(this); return false;">Remove Date</a>
+</div>
+</div>
+<!-- Workaround to add multiple Dates because DamsDate has no datastream. -->
+<p><a href="http://localhost:3000/object/new#" onclick="add_fields(this, &quot;date&quot;, &quot;&lt;div class=\&quot;fields\&quot;&gt;\n    &lt;label for=\&quot;dams_object_date_attributes_new_date_value\&quot;&gt;Date&lt;\/label&gt;\n    &lt;input class=\&quot;input-block-level\&quot; id=\&quot;dams_object_date_attributes_new_date_value\&quot; name=\&quot;dams_object[date_attributes][new_date][value]\&quot; type=\&quot;text\&quot; value=\&quot;\&quot; /&gt;    \n    &lt;label for=\&quot;dams_object_date_attributes_new_date_beginDate\&quot;&gt;Begin Date&lt;\/label&gt;\n    &lt;input class=\&quot;input-block-level\&quot; id=\&quot;dams_object_date_attributes_new_date_beginDate\&quot; name=\&quot;dams_object[date_attributes][new_date][beginDate]\&quot; type=\&quot;text\&quot; value=\&quot;\&quot; /&gt; \n    &lt;label for=\&quot;dams_object_date_attributes_new_date_endDate\&quot;&gt;End Date&lt;\/label&gt;\n    &lt;input class=\&quot;input-block-level\&quot; id=\&quot;dams_object_date_attributes_new_date_endDate\&quot; name=\&quot;dams_object[date_attributes][new_date][endDate]\&quot; type=\&quot;text\&quot; value=\&quot;\&quot; /&gt;\n    &lt;label for=\&quot;dams_object_date_attributes_new_date_type\&quot;&gt;Date Type&lt;\/label&gt;\n    &lt;input class=\&quot;input-block-level\&quot; id=\&quot;dams_object_date_attributes_new_date_type\&quot; name=\&quot;dams_object[date_attributes][new_date][type]\&quot; type=\&quot;text\&quot; value=\&quot;\&quot; /&gt;    \n    &lt;label for=\&quot;dams_object_date_attributes_new_date_encoding\&quot;&gt;Date Encoding&lt;\/label&gt;\n    &lt;input class=\&quot;input-block-level\&quot; id=\&quot;dams_object_date_attributes_new_date_encoding\&quot; name=\&quot;dams_object[date_attributes][new_date][encoding]\&quot; type=\&quot;text\&quot; value=\&quot;\&quot; /&gt;\n    &lt;br/&gt;\n    	&lt;a href=\&quot;#\&quot; onclick=\&quot;remove_fields(this); return false;\&quot;&gt;Remove Date&lt;\/a&gt;\n&lt;\/div&gt;&quot;); return false;">Add Date</a></p>
+         
+    <h3>Unit</h3>
+  
+    <select id="dams_object_unit_attributes_0_id" name="dams_object[unit_attributes][0][id]" required="required"><option value="">Select Unit</option>
+<option value="http://library.ucsd.edu/ark:/20775/bb02020202">Library Digital Collections</option>
+<option value="http://library.ucsd.edu/ark:/20775/bb48484848">Research Data Curation Program</option>
+<option value="http://library.ucsd.edu/ark:/20775/ac00000300">Test Unit Program</option></select>
+  
+     
+    <h3>Collection</h3>
+  <label>Assembled Collection</label>
+
+  <div class="fields">
+	<div id="assembledCollectionId">
+	    <br>
+	    <select class="newAttributeClass" id="dams_object_assembledCollection_attributes_0_id" name="dams_object[assembledCollection_attributes][0][id]" onchange="javascript: checkOption(this.id,true,&#39;dams_assembled_collections&#39;);"><option value="">Select Assembled Collection</option>
+<option value="http://library.ucsd.edu/ark:/20775/bb03030303">UCSD Electronic Theses and Dissertations</option>
+<option value="http://library.ucsd.edu/ark:/20775/bd3516400n">Sample Assembled Collection, The: Subtitle, Allegro, 1</option>
+<option value="http://library.ucsd.edu/ark:/20775/bd44383589">UCSD-only collection</option>
+<option value="http://library.ucsd.edu/ark:/20775/bd5735300v">curator-only collection</option>
+<option value="http://library.ucsd.edu/ark:/20775/xx00000141">TestTitle2: TestSubTitle2</option>
+<option value="http://library.ucsd.edu/ark:/20775/xx00001559">TestTitle2: TestSubTitle2, , , </option>
+<option value="http://library.ucsd.edu/ark:/20775/ac00000205">Test AssembledCollection Title -- Unit bb48484848</option>
+<option value="http://library.ucsd.edu/ark:/20775/ac00000204">Test AssembledCollection Title -- Unit bb02020202</option>
+<option value="Create New Assembled Collection">Create New Assembled Collection</option></select>
+	    <br>
+	    <a href="http://localhost:3000/object/new#" onclick="remove_fields(this); return false;">Remove Assembled Collection</a>
+    </div>
+</div>
+
+
+<p><a href="http://localhost:3000/object/new#" onclick="add_fields(this, &quot;assembledCollection&quot;, &quot;&lt;div class=\&quot;fields\&quot;&gt;\n	&lt;div id=\&quot;assembledCollectionId\&quot;&gt;\n	    &lt;br/&gt;\n	    &lt;select class=\&quot;newAttributeClass\&quot; id=\&quot;dams_object_assembledCollection_attributes_new_assembledCollection_id\&quot; name=\&quot;dams_object[assembledCollection_attributes][new_assembledCollection][id]\&quot; onChange=\&quot;javascript: checkOption(this.id,true,&amp;#39;dams_assembled_collections&amp;#39;);\&quot;&gt;&lt;option value=\&quot;\&quot;&gt;Select Assembled Collection&lt;\/option&gt;\n&lt;option value=\&quot;http://library.ucsd.edu/ark:/20775/bb03030303\&quot;&gt;UCSD Electronic Theses and Dissertations&lt;\/option&gt;\n&lt;option value=\&quot;http://library.ucsd.edu/ark:/20775/bd3516400n\&quot;&gt;Sample Assembled Collection, The: Subtitle, Allegro, 1&lt;\/option&gt;\n&lt;option value=\&quot;http://library.ucsd.edu/ark:/20775/bd44383589\&quot;&gt;UCSD-only collection&lt;\/option&gt;\n&lt;option value=\&quot;http://library.ucsd.edu/ark:/20775/bd5735300v\&quot;&gt;curator-only collection&lt;\/option&gt;\n&lt;option value=\&quot;http://library.ucsd.edu/ark:/20775/xx00000141\&quot;&gt;TestTitle2: TestSubTitle2&lt;\/option&gt;\n&lt;option value=\&quot;http://library.ucsd.edu/ark:/20775/xx00001559\&quot;&gt;TestTitle2: TestSubTitle2, , , &lt;\/option&gt;\n&lt;option value=\&quot;http://library.ucsd.edu/ark:/20775/ac00000205\&quot;&gt;Test AssembledCollection Title -- Unit bb48484848&lt;\/option&gt;\n&lt;option value=\&quot;http://library.ucsd.edu/ark:/20775/ac00000204\&quot;&gt;Test AssembledCollection Title -- Unit bb02020202&lt;\/option&gt;\n&lt;option value=\&quot;Create New Assembled Collection\&quot;&gt;Create New Assembled Collection&lt;\/option&gt;&lt;\/select&gt;\n	    &lt;br/&gt;\n	    &lt;a href=\&quot;#\&quot; onclick=\&quot;remove_fields(this); return false;\&quot;&gt;Remove Assembled Collection&lt;\/a&gt;\n    &lt;\/div&gt;\n&lt;\/div&gt;\n&quot;); return false;">Add Assembled Collection</a></p>
+ 
+  <br> 
+  <label>Provenance Collection</label>
+  
+    <select id="dams_object_provenanceCollection_attributes_0_id" name="dams_object[provenanceCollection_attributes][0][id]"><option value="">Select Provenance Collection</option>
+<option value="http://library.ucsd.edu/ark:/20775/bd24241158">Scripps Institution of Oceanography, Geological Collections</option>
+<option value="http://library.ucsd.edu/ark:/20775/bd5905304g">Santa Fe Light Cone Simulation research project files 2005-2012, Bulk 2005-2007</option>
+<option value="http://library.ucsd.edu/ark:/20775/bb24242424">Historical Dissertations</option>
+<option value="http://library.ucsd.edu/ark:/20775/bd48133407">Sample Provenance Collection, The: Subtitle, Allegro, 1</option>
+<option value="http://library.ucsd.edu/ark:/20775/xx00000303">TestTitle2: TestSubTitle2, , , </option>
+<option value="http://library.ucsd.edu/ark:/20775/xx00000816">"Party honoring James Arnold with the naming of an asteroid ""2143 Jimarnold"""</option>
+<option value="http://library.ucsd.edu/ark:/20775/xx00001211">Test Provenance Collection Title 2</option>
+<option value="http://library.ucsd.edu/ark:/20775/xx00001215">Test Provenance Collection Title 3</option>
+<option value="http://library.ucsd.edu/ark:/20775/xx00001219">Test Title 5</option>
+<option value="http://library.ucsd.edu/ark:/20775/xx00001720">TestTitle2: TestSubTitle2, , , </option>
+<option value="http://library.ucsd.edu/ark:/20775/ac00000011">Test ProvenanceCollection Title</option>
+<option value="http://library.ucsd.edu/ark:/20775/ac00000201">Test ProvenanceCollection Title -- Unit bb48484848</option>
+<option value="http://library.ucsd.edu/ark:/20775/ac00000200">Test ProvenanceCollection Title -- Unit bb02020202</option></select>
+  <br>
+  <label>Provenance Collection Part</label>
+  
+    <select id="dams_object_provenanceCollectionPart_attributes_0_id" name="dams_object[provenanceCollectionPart_attributes][0][id]"><option value="">Select Provenance Collection Part</option>
+<option value="http://library.ucsd.edu/ark:/20775/bb25252525">May 2009</option>
+<option value="http://library.ucsd.edu/ark:/20775/bd6110278b">Sample Provenance Part, The: Subtitle, Allegro, 1</option>
+<option value="http://library.ucsd.edu/ark:/20775/xx00000299">TestTitle2: TestSubTitle2, , , </option>
+<option value="http://library.ucsd.edu/ark:/20775/xx00001194">Test Provenance Collection Title</option>
+<option value="http://library.ucsd.edu/ark:/20775/xx00001198">Test Title</option>
+<option value="http://library.ucsd.edu/ark:/20775/xx00001202">Test Title2</option>
+<option value="http://library.ucsd.edu/ark:/20775/xx00001716">TestTitle2: TestSubTitle2, , , </option>
+<option value="http://library.ucsd.edu/ark:/20775/ac00000203">Test ProvenanceCollectionPart Title -- Unit bb48484848</option></select>
+   
+
+  <h3>Language</h3>  
+<div id="newLanguage">
+</div>
+<div id="newLanguageLink">
+	
+	    <div class="fields">
+    <br>
+	<select class="newAttributeClass" id="dams_object_language_attributes_0_id" name="dams_object[language_attributes][0][id]" onchange="javascript: checkOption(this.id,true,&#39;mads_languages&#39;);" required="required"><option value="">Select Language</option>
+<option value="http://library.ucsd.edu/ark:/20775/bd0410344f">English</option>
+<option value="http://library.ucsd.edu/ark:/20775/bd91134949">French</option>
+<option value="http://library.ucsd.edu/ark:/20775/xx00000533">Test Element</option>
+<option value="http://library.ucsd.edu/ark:/20775/xx00001404">Test Language</option>
+<option value="http://library.ucsd.edu/ark:/20775/xx00001951">Test Element</option>
+<option value="Create New Language">Create New Language</option></select>    
+    <br>
+</div>
+    
+</div>
+
+<p><a href="http://localhost:3000/object/new#" onclick="add_fields(this, &quot;language&quot;, &quot;&lt;div class=\&quot;fields\&quot;&gt;\n    &lt;br/&gt;\n	&lt;select class=\&quot;newAttributeClass\&quot; id=\&quot;dams_object_language_attributes_new_language_id\&quot; name=\&quot;dams_object[language_attributes][new_language][id]\&quot; onChange=\&quot;javascript: checkOption(this.id,true,&amp;#39;mads_languages&amp;#39;);\&quot; required=\&quot;required\&quot;&gt;&lt;option value=\&quot;\&quot;&gt;Select Language&lt;\/option&gt;\n&lt;option value=\&quot;http://library.ucsd.edu/ark:/20775/bd0410344f\&quot;&gt;English&lt;\/option&gt;\n&lt;option value=\&quot;http://library.ucsd.edu/ark:/20775/bd91134949\&quot;&gt;French&lt;\/option&gt;\n&lt;option value=\&quot;http://library.ucsd.edu/ark:/20775/xx00000533\&quot;&gt;Test Element&lt;\/option&gt;\n&lt;option value=\&quot;http://library.ucsd.edu/ark:/20775/xx00001404\&quot;&gt;Test Language&lt;\/option&gt;\n&lt;option value=\&quot;http://library.ucsd.edu/ark:/20775/xx00001951\&quot;&gt;Test Element&lt;\/option&gt;\n&lt;option value=\&quot;Create New Language\&quot;&gt;Create New Language&lt;\/option&gt;&lt;\/select&gt;    \n    &lt;br/&gt;\n    	&lt;a href=\&quot;#\&quot; onclick=\&quot;remove_fields(this); return false;\&quot;&gt;Remove Language&lt;\/a&gt;\n&lt;\/div&gt;\n&quot;); return false;">Add Language</a></p>
+
+      
+  <h3>Note</h3>
+<div id="noteSection">
+  
+    <div class="fields">       
+	<label for="dams_object_note_attributes_0_type">Note</label>
+    <input class="input-block-level" id="dams_object_note_attributes_0_value" name="dams_object[note_attributes][0][value]" type="text" value="">    
+    <label for="dams_object_note_attributes_0_type">Note Type</label>
+    <input class="input-block-level" id="dams_object_note_attributes_0_type" name="dams_object[note_attributes][0][type]" type="text" value="">
+    <label for="dams_object_note_attributes_0_displayLabel">Note Display label</label>
+    <input class="input-block-level" id="dams_object_note_attributes_0_displayLabel" name="dams_object[note_attributes][0][displayLabel]" type="text" value="">
+    <br>
+    <a href="http://localhost:3000/object/new#" onclick="remove_fields(this); return false;">Remove Note</a>
+</div>              
+</div>
+<p><a href="http://localhost:3000/object/new#" onclick="add_fields(this, &quot;note&quot;, &quot;&lt;div class=\&quot;fields\&quot;&gt;       \n	&lt;label for=\&quot;dams_object_note_attributes_new_note_type\&quot;&gt;Note&lt;\/label&gt;\n    &lt;input class=\&quot;input-block-level\&quot; id=\&quot;dams_object_note_attributes_new_note_value\&quot; name=\&quot;dams_object[note_attributes][new_note][value]\&quot; type=\&quot;text\&quot; value=\&quot;\&quot; /&gt;    \n    &lt;label for=\&quot;dams_object_note_attributes_new_note_type\&quot;&gt;Note Type&lt;\/label&gt;\n    &lt;input class=\&quot;input-block-level\&quot; id=\&quot;dams_object_note_attributes_new_note_type\&quot; name=\&quot;dams_object[note_attributes][new_note][type]\&quot; type=\&quot;text\&quot; value=\&quot;\&quot; /&gt;\n    &lt;label for=\&quot;dams_object_note_attributes_new_note_displayLabel\&quot;&gt;Note Display label&lt;\/label&gt;\n    &lt;input class=\&quot;input-block-level\&quot; id=\&quot;dams_object_note_attributes_new_note_displayLabel\&quot; name=\&quot;dams_object[note_attributes][new_note][displayLabel]\&quot; type=\&quot;text\&quot; value=\&quot;\&quot; /&gt;\n    &lt;br/&gt;\n    &lt;a href=\&quot;#\&quot; onclick=\&quot;remove_fields(this); return false;\&quot;&gt;Remove Note&lt;\/a&gt;\n&lt;\/div&gt;&quot;); return false;">Add Note</a></p>
+  
+<h3>Scope Content Note</h3>
+<div id="scopeNoteSection">
+  
+    <div class="fields">       
+    <label for="dams_object_scopeContentNote_attributes_0_value">Scope Content Note</label>
+    <input class="input-block-level" id="dams_object_scopeContentNote_attributes_0_value" name="dams_object[scopeContentNote_attributes][0][value]" type="text" value="">    
+    <label for="dams_object_scopeContentNote_attributes_0_type">Scope Content Note Type</label>
+    <input class="input-block-level" id="dams_object_scopeContentNote_attributes_0_type" name="dams_object[scopeContentNote_attributes][0][type]" type="text" value="">
+    <label for="dams_object_scopeContentNote_attributes_0_displayLabel">Scope Content Note Display Label</label>
+    <input class="input-block-level" id="dams_object_scopeContentNote_attributes_0_displayLabel" name="dams_object[scopeContentNote_attributes][0][displayLabel]" type="text" value="">
+    <br>    
+    <a href="http://localhost:3000/object/new#" onclick="remove_fields(this); return false;">Remove Scope Content Note</a>
+</div>
+</div>
+<p><a href="http://localhost:3000/object/new#" onclick="add_fields(this, &quot;scopeContentNote&quot;, &quot;&lt;div class=\&quot;fields\&quot;&gt;       \n    &lt;label for=\&quot;dams_object_scopeContentNote_attributes_new_scopeContentNote_value\&quot;&gt;Scope Content Note&lt;\/label&gt;\n    &lt;input class=\&quot;input-block-level\&quot; id=\&quot;dams_object_scopeContentNote_attributes_new_scopeContentNote_value\&quot; name=\&quot;dams_object[scopeContentNote_attributes][new_scopeContentNote][value]\&quot; type=\&quot;text\&quot; value=\&quot;\&quot; /&gt;    \n    &lt;label for=\&quot;dams_object_scopeContentNote_attributes_new_scopeContentNote_type\&quot;&gt;Scope Content Note Type&lt;\/label&gt;\n    &lt;input class=\&quot;input-block-level\&quot; id=\&quot;dams_object_scopeContentNote_attributes_new_scopeContentNote_type\&quot; name=\&quot;dams_object[scopeContentNote_attributes][new_scopeContentNote][type]\&quot; type=\&quot;text\&quot; value=\&quot;\&quot; /&gt;\n    &lt;label for=\&quot;dams_object_scopeContentNote_attributes_new_scopeContentNote_displayLabel\&quot;&gt;Scope Content Note Display Label&lt;\/label&gt;\n    &lt;input class=\&quot;input-block-level\&quot; id=\&quot;dams_object_scopeContentNote_attributes_new_scopeContentNote_displayLabel\&quot; name=\&quot;dams_object[scopeContentNote_attributes][new_scopeContentNote][displayLabel]\&quot; type=\&quot;text\&quot; value=\&quot;\&quot; /&gt;\n    &lt;br/&gt;    \n    &lt;a href=\&quot;#\&quot; onclick=\&quot;remove_fields(this); return false;\&quot;&gt;Remove Scope Content Note&lt;\/a&gt;\n&lt;\/div&gt;&quot;); return false;">Add Scope Content Note</a></p>
+
+<h3>Custodial Responsibility Note</h3>
+<div id="custodialNoteSection">  
+  
+    <div class="fields"> 
+    <label for="dams_object_custodialResponsibilityNote_attributes_0_value">Custodial Responsibility Note</label>
+    <input class="input-block-level" id="dams_object_custodialResponsibilityNote_attributes_0_value" name="dams_object[custodialResponsibilityNote_attributes][0][value]" type="text" value="">    
+    <label for="dams_object_custodialResponsibilityNote_attributes_0_type">Custodial Responsibility Note Type</label>
+    <input class="input-block-level" id="dams_object_custodialResponsibilityNote_attributes_0_type" name="dams_object[custodialResponsibilityNote_attributes][0][type]" type="text" value="">
+    <label for="dams_object_custodialResponsibilityNote_attributes_0_displayLabel">Custodial Responsibility Note Display Label</label>
+    <input class="input-block-level" id="dams_object_custodialResponsibilityNote_attributes_0_displayLabel" name="dams_object[custodialResponsibilityNote_attributes][0][displayLabel]" type="text" value="">
+    <br>     
+    <a href="http://localhost:3000/object/new#" onclick="remove_fields(this); return false;">Remove Custodial Responsibility Note</a>
+</div>
+</div>
+<p><a href="http://localhost:3000/object/new#" onclick="add_fields(this, &quot;custodialResponsibilityNote&quot;, &quot;&lt;div class=\&quot;fields\&quot;&gt; \n    &lt;label for=\&quot;dams_object_custodialResponsibilityNote_attributes_new_custodialResponsibilityNote_value\&quot;&gt;Custodial Responsibility Note&lt;\/label&gt;\n    &lt;input class=\&quot;input-block-level\&quot; id=\&quot;dams_object_custodialResponsibilityNote_attributes_new_custodialResponsibilityNote_value\&quot; name=\&quot;dams_object[custodialResponsibilityNote_attributes][new_custodialResponsibilityNote][value]\&quot; type=\&quot;text\&quot; value=\&quot;\&quot; /&gt;    \n    &lt;label for=\&quot;dams_object_custodialResponsibilityNote_attributes_new_custodialResponsibilityNote_type\&quot;&gt;Custodial Responsibility Note Type&lt;\/label&gt;\n    &lt;input class=\&quot;input-block-level\&quot; id=\&quot;dams_object_custodialResponsibilityNote_attributes_new_custodialResponsibilityNote_type\&quot; name=\&quot;dams_object[custodialResponsibilityNote_attributes][new_custodialResponsibilityNote][type]\&quot; type=\&quot;text\&quot; value=\&quot;\&quot; /&gt;\n    &lt;label for=\&quot;dams_object_custodialResponsibilityNote_attributes_new_custodialResponsibilityNote_displayLabel\&quot;&gt;Custodial Responsibility Note Display Label&lt;\/label&gt;\n    &lt;input class=\&quot;input-block-level\&quot; id=\&quot;dams_object_custodialResponsibilityNote_attributes_new_custodialResponsibilityNote_displayLabel\&quot; name=\&quot;dams_object[custodialResponsibilityNote_attributes][new_custodialResponsibilityNote][displayLabel]\&quot; type=\&quot;text\&quot; value=\&quot;\&quot; /&gt;\n    &lt;br/&gt;     \n    &lt;a href=\&quot;#\&quot; onclick=\&quot;remove_fields(this); return false;\&quot;&gt;Remove Custodial Responsibility Note&lt;\/a&gt;\n&lt;\/div&gt;&quot;); return false;">Add Custodial Responsibility Note</a></p>
+  
+<h3>Preferred Citation Note</h3>
+<div id="preferredNoteSection">
+  
+    <div class="fields">
+    <label for="dams_object_preferredCitationNote_attributes_0_value">Preferred Citation Note</label>
+    <input class="input-block-level" id="dams_object_preferredCitationNote_attributes_0_value" name="dams_object[preferredCitationNote_attributes][0][value]" type="text" value="">    
+    <label for="dams_object_preferredCitationNote_attributes_0_type">Preferred Citation Note Type</label>
+    <input class="input-block-level" id="dams_object_preferredCitationNote_attributes_0_type" name="dams_object[preferredCitationNote_attributes][0][type]" type="text" value="">
+    <label for="dams_object_preferredCitationNote_attributes_0_displayLabel">Preferred Citation Note Display Label</label>
+    <input class="input-block-level" id="dams_object_preferredCitationNote_attributes_0_displayLabel" name="dams_object[preferredCitationNote_attributes][0][displayLabel]" type="text" value="">
+    <br>                 
+    <a href="http://localhost:3000/object/new#" onclick="remove_fields(this); return false;">Remove Preferred Citation Note</a>
+</div> 
+  <p><a href="http://localhost:3000/object/new#" onclick="add_fields(this, &quot;preferredCitationNote&quot;, &quot;&lt;div class=\&quot;fields\&quot;&gt;\n    &lt;label for=\&quot;dams_object_preferredCitationNote_attributes_new_preferredCitationNote_value\&quot;&gt;Preferred Citation Note&lt;\/label&gt;\n    &lt;input class=\&quot;input-block-level\&quot; id=\&quot;dams_object_preferredCitationNote_attributes_new_preferredCitationNote_value\&quot; name=\&quot;dams_object[preferredCitationNote_attributes][new_preferredCitationNote][value]\&quot; type=\&quot;text\&quot; value=\&quot;\&quot; /&gt;    \n    &lt;label for=\&quot;dams_object_preferredCitationNote_attributes_new_preferredCitationNote_type\&quot;&gt;Preferred Citation Note Type&lt;\/label&gt;\n    &lt;input class=\&quot;input-block-level\&quot; id=\&quot;dams_object_preferredCitationNote_attributes_new_preferredCitationNote_type\&quot; name=\&quot;dams_object[preferredCitationNote_attributes][new_preferredCitationNote][type]\&quot; type=\&quot;text\&quot; value=\&quot;\&quot; /&gt;\n    &lt;label for=\&quot;dams_object_preferredCitationNote_attributes_new_preferredCitationNote_displayLabel\&quot;&gt;Preferred Citation Note Display Label&lt;\/label&gt;\n    &lt;input class=\&quot;input-block-level\&quot; id=\&quot;dams_object_preferredCitationNote_attributes_new_preferredCitationNote_displayLabel\&quot; name=\&quot;dams_object[preferredCitationNote_attributes][new_preferredCitationNote][displayLabel]\&quot; type=\&quot;text\&quot; value=\&quot;\&quot; /&gt;\n    &lt;br/&gt;                 \n    &lt;a href=\&quot;#\&quot; onclick=\&quot;remove_fields(this); return false;\&quot;&gt;Remove Preferred Citation Note&lt;\/a&gt;\n&lt;\/div&gt;&quot;); return false;">Add Preferred Citation Note</a></p>
+
+</div>
+        
+   <h3>Relationship</h3>
+
+  <div class="fields">
+  <br>
+<select id="dams_object_relationshipNameType_" name="dams_object[relationshipNameType][]" onchange="javascript: getDynamicFields(this,&#39;dams_object&#39;,&#39;#newRelationship&#39;,&#39;0&#39;,&#39;relationshipName&#39;,null,&#39;true&#39;,null);"><option value="">Select Name Type</option><option value="ConferenceName">ConferenceName</option>
+<option value="CorporateName">CorporateName</option>
+<option value="FamilyName">FamilyName</option>
+<option value="Name">Name</option>
+<option value="PersonalName">PersonalName</option></select>
+
+<div id="newRelationship"></div>
+
+</div>
+
+  <p><a href="http://localhost:3000/object/new#" onclick="add_dynamic_fields(this, &quot;&lt;div class=\&quot;fields\&quot;&gt;\n  &lt;br/&gt;\n&lt;select id=\&quot;dams_object_relationshipNameType_\&quot; name=\&quot;dams_object[relationshipNameType][]\&quot; onChange=\&quot;javascript: getDynamicFields(this,&amp;#39;dams_object&amp;#39;,&amp;#39;#newRelationship&amp;#39;,&amp;#39;0&amp;#39;,&amp;#39;relationshipName&amp;#39;,null,&amp;#39;true&amp;#39;,null);\&quot;&gt;&lt;option value=\&quot;\&quot;&gt;Select Name Type&lt;\/option&gt;&lt;option value=\&quot;ConferenceName\&quot;&gt;ConferenceName&lt;\/option&gt;\n&lt;option value=\&quot;CorporateName\&quot;&gt;CorporateName&lt;\/option&gt;\n&lt;option value=\&quot;FamilyName\&quot;&gt;FamilyName&lt;\/option&gt;\n&lt;option value=\&quot;Name\&quot;&gt;Name&lt;\/option&gt;\n&lt;option value=\&quot;PersonalName\&quot;&gt;PersonalName&lt;\/option&gt;&lt;\/select&gt;\n\n&lt;div id=\&quot;newRelationship\&quot;&gt;&lt;\/div&gt;\n\n&lt;\/div&gt;&quot;, &quot;Relationship&quot;); return false;">Add Relationship</a></p>
+  
+  <h3>Complex Subject</h3>
+
+  <div class="fields">
+	<div id="complexSubjectId">
+	    <br>
+	    <select class="newAttributeClass" id="dams_object_complexSubject_attributes_0_id" name="dams_object[complexSubject_attributes][0][id]" onchange="javascript: checkOption(this.id,true,&#39;mads_complex_subjects&#39;);"><option value="">Select Subject</option>
+<option value="http://library.ucsd.edu/ark:/20775/xx00000397">Test Complex Subject</option>
+<option value="http://library.ucsd.edu/ark:/20775/xx00001254">TestLabel</option>
+<option value="http://library.ucsd.edu/ark:/20775/xx00001815">Test Complex Subject</option>
+<option value="Create New Complex Subject">Create New Complex Subject</option></select>
+	    <br>
+	    <a href="http://localhost:3000/object/new#" onclick="remove_fields(this); return false;">Remove Complex Subject</a>
+    </div>
+</div>
+
+
+<p><a href="http://localhost:3000/object/new#" onclick="add_fields(this, &quot;complexSubject&quot;, &quot;&lt;div class=\&quot;fields\&quot;&gt;\n	&lt;div id=\&quot;complexSubjectId\&quot;&gt;\n	    &lt;br/&gt;\n	    &lt;select class=\&quot;newAttributeClass\&quot; id=\&quot;dams_object_complexSubject_attributes_new_complexSubject_id\&quot; name=\&quot;dams_object[complexSubject_attributes][new_complexSubject][id]\&quot; onChange=\&quot;javascript: checkOption(this.id,true,&amp;#39;mads_complex_subjects&amp;#39;);\&quot;&gt;&lt;option value=\&quot;\&quot;&gt;Select Subject&lt;\/option&gt;\n&lt;option value=\&quot;http://library.ucsd.edu/ark:/20775/xx00000397\&quot;&gt;Test Complex Subject&lt;\/option&gt;\n&lt;option value=\&quot;http://library.ucsd.edu/ark:/20775/xx00001254\&quot;&gt;TestLabel&lt;\/option&gt;\n&lt;option value=\&quot;http://library.ucsd.edu/ark:/20775/xx00001815\&quot;&gt;Test Complex Subject&lt;\/option&gt;\n&lt;option value=\&quot;Create New Complex Subject\&quot;&gt;Create New Complex Subject&lt;\/option&gt;&lt;\/select&gt;\n	    &lt;br/&gt;\n	    &lt;a href=\&quot;#\&quot; onclick=\&quot;remove_fields(this); return false;\&quot;&gt;Remove Complex Subject&lt;\/a&gt;\n    &lt;\/div&gt;\n&lt;\/div&gt;\n&quot;); return false;">Add Complex Subject</a></p>
+ 
+       
+  <h3>Simple Subject</h3>
+
+<div class="fields">
+<br>
+<select id="dams_object_subjectType_" name="dams_object[subjectType][]" onchange="javascript: getDynamicFields(this,&#39;dams_object&#39;,&#39;#newSimpleSubjects&#39;,&#39;0&#39;,&#39;simpleSubject&#39;);"><option value="">Select Subject Type</option><option value="BuiltWorkPlace">BuiltWorkPlace</option>
+<option value="CulturalContext">CulturalContext</option>
+<option value="Function">Function</option>
+<option value="GenreForm">GenreForm</option>
+<option value="Geographic">Geographic</option>
+<option value="Iconography">Iconography</option>
+<option value="Occupation">Occupation</option>
+<option value="ScientificName">ScientificName</option>
+<option value="StylePeriod">StylePeriod</option>
+<option value="Technique">Technique</option>
+<option value="Temporal">Temporal</option>
+<option value="Topic">Topic</option></select>
+
+<div id="newSimpleSubjects"></div>
+</div>
+    
+<p><a href="http://localhost:3000/object/new#" onclick="add_dynamic_fields(this, &quot;&lt;div class=\&quot;fields\&quot;&gt;\n&lt;br/&gt;\n&lt;select id=\&quot;dams_object_subjectType_\&quot; name=\&quot;dams_object[subjectType][]\&quot; onChange=\&quot;javascript: getDynamicFields(this,&amp;#39;dams_object&amp;#39;,&amp;#39;#newSimpleSubjects&amp;#39;,&amp;#39;0&amp;#39;,&amp;#39;simpleSubject&amp;#39;);\&quot;&gt;&lt;option value=\&quot;\&quot;&gt;Select Subject Type&lt;\/option&gt;&lt;option value=\&quot;BuiltWorkPlace\&quot;&gt;BuiltWorkPlace&lt;\/option&gt;\n&lt;option value=\&quot;CulturalContext\&quot;&gt;CulturalContext&lt;\/option&gt;\n&lt;option value=\&quot;Function\&quot;&gt;Function&lt;\/option&gt;\n&lt;option value=\&quot;GenreForm\&quot;&gt;GenreForm&lt;\/option&gt;\n&lt;option value=\&quot;Geographic\&quot;&gt;Geographic&lt;\/option&gt;\n&lt;option value=\&quot;Iconography\&quot;&gt;Iconography&lt;\/option&gt;\n&lt;option value=\&quot;Occupation\&quot;&gt;Occupation&lt;\/option&gt;\n&lt;option value=\&quot;ScientificName\&quot;&gt;ScientificName&lt;\/option&gt;\n&lt;option value=\&quot;StylePeriod\&quot;&gt;StylePeriod&lt;\/option&gt;\n&lt;option value=\&quot;Technique\&quot;&gt;Technique&lt;\/option&gt;\n&lt;option value=\&quot;Temporal\&quot;&gt;Temporal&lt;\/option&gt;\n&lt;option value=\&quot;Topic\&quot;&gt;Topic&lt;\/option&gt;&lt;\/select&gt;\n\n&lt;div id=\&quot;newSimpleSubjects\&quot;&gt;&lt;\/div&gt;\n&lt;\/div&gt;&quot;, &quot;SimpleSubjects&quot;); return false;">Add Simple Subject</a></p>
+    
+  
+  <h3>Subject Name</h3>  
+
+<div class="fields">
+<br>
+<select id="dams_object_nameType_" name="dams_object[nameType][]" onchange="javascript: getDynamicFields(this,&#39;dams_object&#39;,&#39;#newCreator&#39;,&#39;0&#39;, &#39;creator&#39;);"><option value="">Select Name</option><option value="ConferenceName">ConferenceName</option>
+<option value="CorporateName">CorporateName</option>
+<option value="FamilyName">FamilyName</option>
+<option value="Name">Name</option>
+<option value="PersonalName">PersonalName</option></select>
+
+<div id="newCreator"></div>
+</div>
+
+
+<p><a href="http://localhost:3000/object/new#" onclick="add_dynamic_fields(this, &quot;&lt;div class=\&quot;fields\&quot;&gt;\n&lt;br/&gt;\n&lt;select id=\&quot;dams_object_nameType_\&quot; name=\&quot;dams_object[nameType][]\&quot; onChange=\&quot;javascript: getDynamicFields(this,&amp;#39;dams_object&amp;#39;,&amp;#39;#newCreator&amp;#39;,&amp;#39;0&amp;#39;, &amp;#39;creator&amp;#39;);\&quot;&gt;&lt;option value=\&quot;\&quot;&gt;Select Name&lt;\/option&gt;&lt;option value=\&quot;ConferenceName\&quot;&gt;ConferenceName&lt;\/option&gt;\n&lt;option value=\&quot;CorporateName\&quot;&gt;CorporateName&lt;\/option&gt;\n&lt;option value=\&quot;FamilyName\&quot;&gt;FamilyName&lt;\/option&gt;\n&lt;option value=\&quot;Name\&quot;&gt;Name&lt;\/option&gt;\n&lt;option value=\&quot;PersonalName\&quot;&gt;PersonalName&lt;\/option&gt;&lt;\/select&gt;\n\n&lt;div id=\&quot;newCreator\&quot;&gt;&lt;\/div&gt;\n&lt;\/div&gt;\n&quot;, &quot;Creator&quot;); return false;">Add Name</a></p>
+
+        
+    <h3>Rights</h3>
+  
+    <select id="dams_object_copyright_attributes_0_id" name="dams_object[copyright_attributes][0][id]" required="required"><option value="">Select Copyright</option>
+<option value="http://library.ucsd.edu/ark:/20775/bb05050505">Under copyright</option>
+<option value="http://library.ucsd.edu/ark:/20775/bd0513099p">Public domain</option>
+<option value="http://library.ucsd.edu/ark:/20775/xx00000173">Test Status</option>
+<option value="http://library.ucsd.edu/ark:/20775/xx00001055">TestStatus</option>
+<option value="http://library.ucsd.edu/ark:/20775/fx05050505">Under copyright</option>
+<option value="http://library.ucsd.edu/ark:/20775/xx00001590">Test Status</option>
+<option value="http://library.ucsd.edu/ark:/20775/ac00000021">Under copyright test</option>
+<option value="http://library.ucsd.edu/ark:/20775/ac00000301">Under copyright test</option></select>
+  <br>
+  
+    <select id="dams_object_statute_attributes_0_id" name="dams_object[statute_attributes][0][id]"><option value="">Select Statute</option>
+<option value="http://library.ucsd.edu/ark:/20775/xx00000335">citation test</option>
+<option value="http://library.ucsd.edu/ark:/20775/fx45454545">FOO</option>
+<option value="http://library.ucsd.edu/ark:/20775/xx00001751">citation test</option></select>
+  <br>
+  <select id="dams_object_otherRightsURI_" name="dams_object[otherRightsURI][]"><option value="">Select Other Rights</option><option value="xx00000293">Test Note</option>
+<option value="xx00001158">TestNote</option>
+<option value="xx00001710">Test Note</option>
+<option value="ac00000041">Educationally important works unavailable due to unknown copyright holders</option></select>
+  <br>
+  
+    <select id="dams_object_license_attributes_0_id" name="dams_object[license_attributes][0][id]"><option value="">Select License</option>
+<option value="http://library.ucsd.edu/ark:/20775/xx00000271">Test Note</option>
+<option value="http://library.ucsd.edu/ark:/20775/xx00001115">note</option>
+<option value="http://library.ucsd.edu/ark:/20775/fx22222222">FOO</option>
+<option value="http://library.ucsd.edu/ark:/20775/xx00001688">Test Note</option></select>
+  <br>
+
+
+
+  
+  
+<h3>RightsHolder</h3>  
+
+<div class="fields">
+<br>
+<select id="dams_object_rightsHolderType_" name="dams_object[rightsHolderType][]" onchange="javascript: getDynamicFields(this,&#39;dams_object&#39;,&#39;#newRightsHolder&#39;,&#39;0&#39;,&#39;rightsHolder&#39;);"><option value="">Select Type</option><option value="RightsHolderConference">RightsHolderConference</option>
+<option value="RightsHolderCorporate">RightsHolderCorporate</option>
+<option value="RightsHolderFamily">RightsHolderFamily</option>
+<option value="RightsHolderName">RightsHolderName</option>
+<option value="RightsHolderPersonal">RightsHolderPersonal</option></select>
+
+<div id="newRightsHolder"></div>
+</div>
+
+<p><a href="http://localhost:3000/object/new#" onclick="add_dynamic_fields(this, &quot;&lt;div class=\&quot;fields\&quot;&gt;\n&lt;br/&gt;\n&lt;select id=\&quot;dams_object_rightsHolderType_\&quot; name=\&quot;dams_object[rightsHolderType][]\&quot; onChange=\&quot;javascript: getDynamicFields(this,&amp;#39;dams_object&amp;#39;,&amp;#39;#newRightsHolder&amp;#39;,&amp;#39;0&amp;#39;,&amp;#39;rightsHolder&amp;#39;);\&quot;&gt;&lt;option value=\&quot;\&quot;&gt;Select Type&lt;\/option&gt;&lt;option value=\&quot;RightsHolderConference\&quot;&gt;RightsHolderConference&lt;\/option&gt;\n&lt;option value=\&quot;RightsHolderCorporate\&quot;&gt;RightsHolderCorporate&lt;\/option&gt;\n&lt;option value=\&quot;RightsHolderFamily\&quot;&gt;RightsHolderFamily&lt;\/option&gt;\n&lt;option value=\&quot;RightsHolderName\&quot;&gt;RightsHolderName&lt;\/option&gt;\n&lt;option value=\&quot;RightsHolderPersonal\&quot;&gt;RightsHolderPersonal&lt;\/option&gt;&lt;\/select&gt;\n\n&lt;div id=\&quot;newRightsHolder\&quot;&gt;&lt;\/div&gt;\n&lt;\/div&gt;&quot;, &quot;RightsHolder&quot;); return false;">Add Rights Holder</a></p>
+
+    
+  <h3>Related Resource</h3>
+<div id="relatedResourceSection">
+   
+		<div class="fields">
+    <select class="input-drop-down" id="dams_object_relatedResource_attributes_0_type" name="dams_object[relatedResource_attributes][0][type]"><option value="">Select Type</option>
+<option value="related">related</option>
+<option value="online exhibit">online exhibit</option>
+<option value="online finding aid">online finding aid</option>
+<option value="news release">news release</option>
+<option value="depiction">depiction</option>
+<option value="journal entry">journal entry</option>
+<option value="basket">basket</option>
+<option value="artifact">artifact</option></select>    
+    <label for="dams_object_relatedResource_attributes_0_uri">URI</label>
+    <input class="input-block-level" id="dams_object_relatedResource_attributes_0_uri" name="dams_object[relatedResource_attributes][0][uri]" type="url" value="">
+    <label for="dams_object_relatedResource_attributes_0_description">Description</label>
+    <input class="input-block-level" id="dams_object_relatedResource_attributes_0_description" name="dams_object[relatedResource_attributes][0][description]" type="text" value="">    
+    <br>
+</div>       
+</div>
+<!-- Workaround to add multiple RelatedResources because RelatedResource has no datastream. -->
+<p><a href="http://localhost:3000/object/new#" onclick="add_fields(this, &quot;relatedResource&quot;, &quot;&lt;div class=\&quot;fields\&quot;&gt;\n    &lt;select class=\&quot;input-drop-down\&quot; id=\&quot;dams_object_relatedResource_attributes_new_relatedResource_type\&quot; name=\&quot;dams_object[relatedResource_attributes][new_relatedResource][type]\&quot;&gt;&lt;option value=\&quot;\&quot;&gt;Select Type&lt;\/option&gt;\n&lt;option value=\&quot;related\&quot;&gt;related&lt;\/option&gt;\n&lt;option value=\&quot;online exhibit\&quot;&gt;online exhibit&lt;\/option&gt;\n&lt;option value=\&quot;online finding aid\&quot;&gt;online finding aid&lt;\/option&gt;\n&lt;option value=\&quot;news release\&quot;&gt;news release&lt;\/option&gt;\n&lt;option value=\&quot;depiction\&quot;&gt;depiction&lt;\/option&gt;\n&lt;option value=\&quot;journal entry\&quot;&gt;journal entry&lt;\/option&gt;\n&lt;option value=\&quot;basket\&quot;&gt;basket&lt;\/option&gt;\n&lt;option value=\&quot;artifact\&quot;&gt;artifact&lt;\/option&gt;&lt;\/select&gt;    \n    &lt;label for=\&quot;dams_object_relatedResource_attributes_new_relatedResource_uri\&quot;&gt;URI&lt;\/label&gt;\n    &lt;input class=\&quot;input-block-level\&quot; id=\&quot;dams_object_relatedResource_attributes_new_relatedResource_uri\&quot; name=\&quot;dams_object[relatedResource_attributes][new_relatedResource][uri]\&quot; type=\&quot;url\&quot; value=\&quot;\&quot; /&gt;\n    &lt;label for=\&quot;dams_object_relatedResource_attributes_new_relatedResource_description\&quot;&gt;Description&lt;\/label&gt;\n    &lt;input class=\&quot;input-block-level\&quot; id=\&quot;dams_object_relatedResource_attributes_new_relatedResource_description\&quot; name=\&quot;dams_object[relatedResource_attributes][new_relatedResource][description]\&quot; type=\&quot;text\&quot; value=\&quot;\&quot; /&gt;    \n    &lt;br/&gt;\n    	&lt;a href=\&quot;#\&quot; onclick=\&quot;remove_fields(this); return false;\&quot;&gt;Remove Related Resource&lt;\/a&gt;\n&lt;\/div&gt;&quot;); return false;">Add Related Resource</a></p>
+
+  <h3>Cartographic</h3>
+<div id="cartographicsSection">
+   
+   	 <label for="dams_object_cartographics_attributes_0_point">Point</label>
+     <input class="input-block-level" id="dams_object_cartographics_attributes_0_point" name="dams_object[cartographics_attributes][0][point]" type="text" value="">    
+   	 <label for="dams_object_cartographics_attributes_0_line">Line</label>
+     <input class="input-block-level" id="dams_object_cartographics_attributes_0_line" name="dams_object[cartographics_attributes][0][line]" type="text" value="">
+   	 <label for="dams_object_cartographics_attributes_0_polygon">Polygon</label>
+     <input class="input-block-level" id="dams_object_cartographics_attributes_0_polygon" name="dams_object[cartographics_attributes][0][polygon]" type="text" value="">
+   	 <label for="dams_object_cartographics_attributes_0_projection">Projection</label>
+     <input class="input-block-level" id="dams_object_cartographics_attributes_0_projection" name="dams_object[cartographics_attributes][0][projection]" type="text" value="">
+   	 <label for="dams_object_cartographics_attributes_0_referenceSystem">ReferenceSystem</label>
+     <input class="input-block-level" id="dams_object_cartographics_attributes_0_referenceSystem" name="dams_object[cartographics_attributes][0][referenceSystem]" type="text" value="">       
+   	 <label for="dams_object_cartographics_attributes_0_scale">Scale</label>
+     <input class="input-block-level" id="dams_object_cartographics_attributes_0_scale" name="dams_object[cartographics_attributes][0][scale]" type="text" value="">                                 
+</div>  
+
+  <h3>Add File</h3>
+  <input type="file" name="file">
+
+  <!--input type="text" id="test" data-provide="typeahead" data-items="3" data-source=''-->
+  <br><br>
+
+  <input class="btn btn-primary" name="commit" type="submit" value="Save">
+  <a class="btn btn-primary" href="http://localhost:3000/object">Cancel</a>   
+</form></div>
+
+
+
+		</section>
+
+		<footer>
+	<section>
+		<address>
+			<strong>UC San Diego</strong>
+			9500 Gilman Dr.
+			La Jolla, CA 92093
+			(858) 534-2230
+		</address>
+		<p>Copyright © 2013 Regents of the University of California. All rights reserved.</p>
+		<ul class="inline">
+			<li><a href="http://www.ucsd.edu/_about/legal/index.html">Terms &amp; Conditions</a></li>
+			<li class="muted">|</li>
+			<li><a href="mailto:dlp@ucsd.edu">Feedback</a></li>
+		</ul>
+	</section>
+</footer>
+
+<div id="ajax-modal" class="modal hide fade" tabindex="-1"></div>
+
+<!-- show debugging parameters in development -->
+<pre class="debug_dump">--- !ruby/hash:ActionController::Parameters
+action: new
+controller: dams_objects
+</pre>
+
+
+	
+
+</body></html>

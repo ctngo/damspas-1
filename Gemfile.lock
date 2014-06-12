@@ -135,6 +135,12 @@ GEM
       hydra-core (= 6.5.0.rc2)
       rails (>= 3.2.6)
     i18n (0.6.9)
+    jasmine (2.0.0)
+      jasmine-core (~> 2.0.0)
+      phantomjs
+      rack (>= 1.2.1)
+      rake
+    jasmine-core (2.0.0)
     jettywrapper (1.4.1)
       activesupport (>= 3.0.0)
       childprocess
@@ -191,6 +197,7 @@ GEM
     parslet (1.5.0)
       blankslate (~> 2.0)
     pg (0.17.0)
+    phantomjs (1.9.2.1)
     polyglot (0.3.4)
     qa (0.2.1)
       activerecord-import
@@ -333,13 +340,14 @@ DEPENDENCIES
   equivalent-xml
   hydra-head (~> 6.5.0.rc2)
   i18n (= 0.6.9)
+  jasmine
   jettywrapper
   jquery-rails
   launchy
   mail_form
   omniauth
   omniauth-shibboleth
-  qa (~> 0.2.1)
+  qa
   rails (~> 4.0.5)
   rails_autolink
   rake (~> 10.1.0)
