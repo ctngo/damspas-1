@@ -867,7 +867,9 @@ def display_node(index)
   def grabRestrictedText(data)
 
     result = nil
-
+    url = "http://libraries.ucsd.edu/assets/dams/site/thumb-restricted.png"
+    display_text = "Culturally sensitive content: This is an image of a person or persons now deceased. In some Aboriginal Communities, hearing names or seeing images of deceased persons may cause sadness or distress, particularly to the relatives of these people. Please click on the icon to view its content."
+    
     if data != nil
       data.each do |datum|
 
@@ -880,7 +882,13 @@ def display_node(index)
 
         # Add 'View Content' button to certain cases
         if note['value'].start_with?('Culturally sensitive content: ')
-          result += '<button type="button" id="view-masked-object" class="btn btn-danger btn-mini">View Content</button>'.html_safe
+          # Not sure if the generic icon should be the thumb-restricted.png or the http://libraries.ucsd.edu/assets/dams/site/no-content.png in
+          # DHH-563: "User sees the generic icon with the following text overlay:"
+          # Redisplaying image for now to give it an id and allow for it to be clicked.
+          result += '<a><img id="view-masked-object" src=#{url}></a>'.html_safe
+          # Warning to display under image
+          result += '<div><span>#{display_text}</span></div>'.html_safe
+          # result += '<button type="button" id="view-masked-object" class="btn btn-danger btn-mini">View Content</button>'.html_safe
         end
 
       end
