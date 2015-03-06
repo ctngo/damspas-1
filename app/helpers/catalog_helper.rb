@@ -25,12 +25,14 @@ module CatalogHelper
     end
 
     if doc['type_tesim'] != nil && doc['type_tesim'].include?("Collection")
-      url = dams_collection_path(doc, :counter => opts[:counter] )
+      url = dams_collection_path(doc)
+      session[:search][:counter] = opts[:counter]
     else
-      url = dams_object_path(doc, :counter => opts[:counter] )
+      url = dams_object_path(doc )
+      session[:search][:counter] = opts[:counter]
     end
 
-    link_to label, url, { :'data-counter' => opts[:counter] }.merge(opts.reject { |k,v| [:label, :counter, :force_label, :results_view].include? k  })
+    link_to label, url, opts.reject { |k,v| [:label, :counter, :force_label, :results_view].include? k  }
 
   end
 
